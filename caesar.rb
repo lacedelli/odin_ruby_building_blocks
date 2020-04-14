@@ -1,11 +1,11 @@
-puts "Please input a string to format."
-user_string = gets.chomp
-puts "Please input a factor to shift The string by. (Only works with positive numbers.)"
-user_shift = gets.chomp.to_i
-while user_shift <= 0 
-	puts "Please input a valid number."
-	user_shift = gets.chomp.to_i
-end
+#puts "Please input a string to format."
+#user_string = gets.chomp
+#puts "Please input a factor to shift The string by. (Only works with positive numbers.)"
+#user_shift = gets.chomp.to_i
+#while user_shift <= 0 
+	#puts "Please input a valid number."
+	#user_shift = gets.chomp.to_i
+#end
 
 def caesar_cypher (text, shift)
 	upper = ("A".."Z").to_a
@@ -17,7 +17,7 @@ def caesar_cypher (text, shift)
 		if upper.include?(char)
 			index = upper.index(char)
 			index += shift
-			while index > upper.length
+			while index >= upper.length
 				index -= upper.length
 			end
 			finished << upper[index]
@@ -25,7 +25,7 @@ def caesar_cypher (text, shift)
 		elsif lower.include?(char)
 			index = lower.index(char)
 			index += shift
-			while index > lower.length
+			while index >= lower.length
 				index -= lower.length
 			end
 			finished << lower[index]
@@ -37,7 +37,7 @@ def caesar_cypher (text, shift)
 	finished
 end
 
-result = caesar_cypher(user_string, user_shift)
-puts result
+#result = caesar_cypher(user_string, user_shift)
+#puts result
 
 
